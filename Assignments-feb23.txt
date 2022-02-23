@@ -1,0 +1,8 @@
+1. Program to remove spaces present in the given String by using 
+Function
+2. Program to find Number of spaces present in the given String by 
+using Function
+3.Program to display names starts with 'K' by using Predicate
+4.Progarm to perform Salary Increment for Employees by using 
+Predicate & Function
+5. Write a demo program to demo on predicate chaining.
