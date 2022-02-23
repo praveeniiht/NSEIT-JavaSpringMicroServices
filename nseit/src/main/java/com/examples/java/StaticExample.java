@@ -43,8 +43,6 @@ public class StaticExample {
 		t2.showData();
 		t3.showData();
 		Temp.showDetails();
-		
-
 	}
 
 }
