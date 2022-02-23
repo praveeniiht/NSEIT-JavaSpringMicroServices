@@ -1,0 +1,380 @@
+Microsoft     ---  DotNet  (licenced)
+
+Sun Microsystems  --- Java  (Open)
+
+1. applications with simple to complex
+2. Gaming
+3. Andorid
+4. Networking
+2 billion devices are now working with java
+
+5. Spring, Springboot,hibernate, BigData
+   Junit, Jmeter
+
+Oracle Coporation ---Java 
+1994  -0.1
+
+JDK 4
+
+JDK 7
+
+JDK 8
+
+
+JDK 11    -- Functional Programing
+
+
+2022  - 17 Versions
+
+Features of Java
+--------------------
+1. Java is Object Oriented Language
+2. Java is strongly typed language
+3. Robust
+4. Reliable
+5. Platform Independent
+6. Exception Handling and Multithreading
+
+Principle of Progamming lang
+-----------------------------
+1. Procedural
+2. Object Oriented  -- Objects 
+3. Logic
+4. Functional
+5. Scripting
+
+Data types
+-----------
+The type of the data with which we are suppose to
+handle in the program.
+
+int  - no decimals
+float
+double  -- decimals
+char -- single letter
+boolean  -- true / false
+date
+String  -- collection of chars
+
+Input and output Statements
+-----------------------------
+
+1. System.out.println("string");  // displays on console 
+                   
+                 output devices ie screens
+
++ --> concatination operator
+
+String name="Kumar";
+int a=10,b=20;
+sysout(a+b);
+
+
+"Hello "+name+" welcome"
+o/p---> Hello Kumar welcome
+
+
+2. Scanner class    // utility class in java.util.Scanner 
+   Stream classes
+
+   Scanner <objectname> = new Scanner(System.in);
+  Scanner sc = new Scanner(System.in);  // keyboard
+  nextInt()  --integer
+  nextFloat()  - Float
+  nextDouble() - Double
+  next()  - String without spaces
+  nextLine()  - String with spaces
+  int a  = sc.nextInt();
+  or int a;
+     a= sc.nextInt();
+
+   float d = sc.nextFloat();
+   double d1 = sc.nextDouble();
+	 String name = sc.next();
+ 
+Standards
+---------
+1. Every class or interface name must be a noun and it should start
+   with uppercase
+
+   Employee, Student, Library, College, Data, User
+  
+
+2. If a class is combination of two words, then initialcap
+   must be follwed.
+
+   eg> HelloWorld, DriverManager, PreparedStatement
+
+3. every variable or method should always represents in
+    lower cases and methods may represent as verbs.
+
+    examinations()
+    attendances()
+    salaries()
+4. if it is a two word combination, then camel case should
+   be followed.
+  getData()
+  putData()
+  calcuateSalaries()
+
+5. every variable or method or class should be self 
+   exaplanatory
+
+class Student{
+	  int htno;    
+     String name;
+     String branch;
+     string university;
+    
+	   public void getStudentDetails(){
+
+		}
+		public void printStudentDetails(){
+
+		}
+}
+
+rules for defining either varibles or methods
+------------------------------------------------
+1. first character must be letter
+2. numeric is allowed from second onwards
+3. no blank spaces or special charcaters are allowed 
+   except _ (underscore)
+4. It should not be a reserve word.
+
+    first number;  // not allowed because blankspace
+    first_number; firstNumber;
+
+arth ops -- =, - /, ^, % 
+relational ; < > >= <= != , ==
+conditonal && , ||  
+sp ops: sizeOf(), instanceOf()
+
+control statements:
+-------------------
+These statement will transfer the control one part of the program
+to another part
+
+1. if clause
+2. swith clause
+3. Loops (while, do..while, for)
+4. break  
+5. continue  (4. and 5. are unconditional statements)
+
+If: this used to select one statement out of two statements.
+
+simple If
+-----------
+  if( cond){
+		// block of code;
+	}
+  next_statement;
+
+if ... else
+=------------
+  if( cond){
+		// true block
+	}
+	else {
+		// false block
+	}
+	next_statemnts;
+
+if.. else
+------------
+if( cond1 ) {
+		true block1;
+} else if( cond 2) {
+		 true block2;
+} else if( cond 3) {
+      true block3
+}
+;
+;
+else if( cond n) {
+      true blockn;
+}
+else {
+	false block;
+}
+next statements
+
+switch 
+------
+switch(variable/expression)
+{
+  case value1 : statements ; break;
+  case value2 : statements ; break;
+  ;
+  ;
+  ;
+  case valuen : statements; break;
+  default : statments;
+}
+variables values can be either int, char or string.
+
+loops
+-----
+while
+do..while
+for
+
+while(cond){
+	//statments;  // min 0 times
+}
+
+do{
+	// statements;  // min 1 time
+}while(cond);
+
+condition based loops
+
+for loop:
+---------
+1. for(initializer;cond;inc/dec){
+		// statements;
+	 }
+
+2. for(varibale:collection){
+		// statements;        enchansed for loop
+   }
+
+3. forEach(function);  // collections concept
+counter controller loop
+
+
+Arrays
+-------
+An array is a collection of homogenous elements.
+
+
+Object Oriented Programming  (OOPS)
+-----------------------------------
+OOP is making the programming element as if it behaves like
+a real time entity.
+
+1. Class , Object
+
+2. Encapsulation
+
+3. Data Hiding 
+
+4. Inheritance
+
+5. Polymorphism
+
+class : A class is a collection of objects having the similar 
+properties
+
+Object: An instance of the class is called object.
+
+A class represents genaralized and an object represents specific
+A class is a logical entity and object is a realtime entity.
+classes cannot exists on its own, but its existence is proved
+by its object
+
+ y = mx+c; 
+
+  class <classname>
+	{
+		  // list of variables;
+       // list of methods;
+   }
+   eg>
+	 class Student{
+			int hallTicketNumber;
+       String name;
+       String branch;
+       String college;
+       public void getStudentDetails(){
+				// code 
+			}
+			public void displayStudentDetails(){
+				// code
+			}
+    }
+    className objName = new ClassName();
+    Student student1 = new Student();
+    Student student2 = new Student();
+
+  Encapsulation: It is the process of combining data and methods
+  together inside the class.
+  
+  It provides the security for the data.
+
+  Abstraction: selective hiding and selective display of the
+             detaials of the methods is called abstraction.
+
+
+  Polymorphism: The ability of an entity to exists in more than
+  one form is called polymorphism
+  
+   1. Runtime polymorphism : The form to be exhibited is known
+       only at the execution time
+
+   2. Compile time polymorphism : The form to be exhibited is known
+      at the compile time itself 
+
+  Inheritance:  The process of acquiring the properties of one 
+  element to another element.
+  code reusability
+  
+  three things will happen when an object is created.
+
+  1. The .class file is loaded into memory
+  2. Instantiation - Allocating the memory to the instance variables
+  3. Initialization - Assiging the default values to the inst. var.
+
+
+
+
+
+
+
+ 
+  
+
+
+  
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+

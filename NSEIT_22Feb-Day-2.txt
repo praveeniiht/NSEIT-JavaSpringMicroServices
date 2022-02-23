@@ -1,0 +1,324 @@
+Constructor: It is the building block of the object
+They are used to create the objects
+without constructors objects cannot be created.
+
+they can be of two types
+
+1. Default constructors  -- zero parameter constructor
+		a. Can be provided by user or lang
+
+2. Parameterized constructors
+     can only be provided by users
+
+
+Constructors are special member functions, which will be 
+automatically executed when ever the object is created.
+
+constructor name is same as that of class name
+and it doesnot have any return type.
+
+
+this is a constant which will the current object refernce
+
+this() method is used to call one type of constructor in the
+other constructor.
+
+1. this() method call must be the first statment.
+2. this() method call should not form either a cycle or 
+   a recursion
+3. this() method cannot be called from the instance methods
+    but instance methods can be called in constructors.
+Static
+-------
+class Employee{
+	int employeeId;
+   String name;
+   int salary;
+   String dept;
+   String org;
+}
+static is a keyword which can be applied 
+
+1. on a variable: That variable will share the same space with
+                  all the objects
+
+2. On a method : This method can be called directly on the class
+                 without creating the object.
+
+3. on a block : This block will be automatically executed
+   whenever the .class file is loaded into memory.
+
+static{
+	// static block
+	
+}
+
+1. Static block will be executed only when the .class file
+   is loaded
+2. non static block will be executed every time when
+   the object is created before the constructor call.
+3. constructors are executed every time when the object is 
+   created
+
+Polymorphism:  The ability of an entity to exists in more than
+one form 
+1. compile time polymorphism : The form to be exhibited is identified
+   at the compile time
+  ex> Method Overloading 
+
+class DataConnection{
+		public void mySqlConnection(t1,mysql,p1){  }
+     public void oracleConnection(t2,oracle,p2){  }
+     public void dbConnection(t1,oracle,p1){  }
+}
+class DataConnection{
+		public void databaseConnection(t1,mysql,p1){  }
+     public void databaseConnection(t2,oracle,p2){  }
+     public void databaseConnection(t1,oracle,p1){  }
+}
+
+A method is said to be overloaded iff two or more methods
+have the same name and if they differ in any one of the 
+following properties:
+1. either in the number of parameters
+2. either in the type of parameters
+3. either in the order of parameters
+
+public void sample(int x , int y){ }
+public int sample(int z, int q){ }
+overloading doesnot depend on return type.
+
+
+public char sample(int a, char b){ }
+public int sample(int z, int q){ }
+
+
+
+
+2. Runtime polymorphism:The form to be exhibited is identified
+   at the runtime only
+  ex>  Method Overriding
+
+Access Specifiers
+-----------------
+Access specifiers provide the level of the security
+for the data and methods.
+
+
+1. public
+2. private
+3. protected
+4.           (default)
+
+public ---> default ----> protected ----> private
+
+
+java.util.
+java.lang.
+java.net.
+java.io.
+java.servlet.
+java.file.
+
+Enumerations
+-------------
+
+enum Weekdays{
+	SUNDAY,  --- 0
+  MONDAY,   ---1
+  TUESDAY,---2
+  WEDNESDAY,
+  THURSDAY,
+  FRIDAY,
+ SATURDAY---6
+}
+
+enum Color {
+    RED,
+    GREEN,
+    BLUE;
+}
+ 
+public class Test {
+    // Driver method
+    public static void main(String[] args)
+    {
+       Color arr[] = Color.values(); 
+			Color c1 = Color.RED;
+        System.out.println(c1);
+
+		for (Color col : arr) {
+        System.out.println(col + " at index "+ col.ordinal());
+        }
+    }
+}
+
+import java.util.Scanner;
+ 
+// An Enum class
+enum Day {
+    SUNDAY,
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY;
+}
+ 
+// Driver class that contains an object of "day" and
+// main().
+public class Test {
+    Day day;
+ 
+    // Constructor
+    public Test(Day day) { this.day = day; }
+ 
+    // Prints a line about Day using switch
+    public void dayIsLike()
+    {
+        switch (day) {
+        case MONDAY:
+            System.out.println("Mondays are bad.");
+            break;
+        case FRIDAY:
+            System.out.println("Fridays are better.");
+            break;
+        case SATURDAY:
+        case SUNDAY:
+            System.out.println("Weekends are best.");
+            break;
+        default:
+            System.out.println("Midweek days are so-so.");
+            break;
+        }
+    }
+ 
+    // Driver method
+    public static void main(String[] args)
+    {
+        String str = "MONDAY";
+        Test t1 = new Test(Day.valueOf(str));
+        t1.dayIsLike();
+    }
+}
+
+Inheritance:
+------------
+It is the process of acquiring the properties from one class
+to another class.
+-> Used for code reusablity
+
+
+relations
+---------
+
+1. Has-a
+2. Is-a
+3. Uses 
+
+class Address{
+		int dno;
+		String street;
+		String city;
+}
+
+class Person{
+		String name;
+		Address address;
+}
+
+class Person{
+		String name;
+		public void printData(Address address){
+			Sysout(name+" "+address)
+		}
+}
+
+Is-a 
+-----
+If the code of one class is used in another class then it
+is-a relation (Inheritance)
+
+Overriding:
+It is the process of supressing the base class element in
+the derived class
+1. Data Overriding
+2. Method Overriding
+
+
+3 variables;
+length, breadth, height
+2 variables
+length, breadth + length, height
+
+
+constructors calling in the inheritance
+-----------------------------------------
+
+Abstract classes
+------------------
+
+class OnlineShopping{
+	public void selectGoods(){
+		//code for selecting the goods
+	}
+	public void payment(){
+		// code for netbanking payment process
+	}
+	public void shipment(){
+		//code for shipment through DTDC courier
+	}
+}
+		OnlineShopping shop1 = new OnlineShopping();
+     OnlineShopping shop2 = new OnlineShopping();
+		OnlineShopping shop3 = new OnlineShopping();
+
+An abstract classes are those classes which has atleast one
+abstract method.
+
+An abstract method is a method which doesnot have the def
+
+Abstract classes are useful in providing the multiple def's 
+for the same method.
+
+abstract class Shopping{
+	public void selectGoods(){
+		//code for selecting the goods
+	}
+	//public abstract void payment();
+	public void shipment(){
+		//code for shipment through DTDC courier
+	}
+}
+
+Inherit the abstract class into another class and override the
+def for the abstract method
+
+class CashShops extends Shopping{
+
+	public void payment(){
+		// code for cash payment;
+  }
+}
+
+clas CardShops extends Shopping{
+
+	publci void payments(){
+	// code for card payments;
+	}
+
+}
+CashShops c1 =new CashShops();
+c1.selectGoods();
+c1.payment();
+c1.shipment();
+
+CardShops c2 = new CardShops();
+c2.selectGoods();
+c2.payment();
+c2.shipment();
+
+1. We cannot create objects for the abstract classes directly
+2. Construtors can be provided in the abstract classes
+

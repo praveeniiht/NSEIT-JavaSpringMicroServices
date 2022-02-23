@@ -1,0 +1,254 @@
+interfaces:
+-----------
+An interface is a java element which has all abstract methods
+
+An interface defines the rule 
+
+An interface provides the blue print.
+
+An interface defines what to do? but not how to do?
+
+class OnlineShopping{
+		public void selectGoods(){
+			// code for selecting through www.onlineshop.com
+		}
+		public void payment(){
+			// code for cash tran
+		}
+		public void shipment(){
+			// shipment is through dtdc
+		}
+}
+
+interface <interfacename>
+{
+	// constants;
+	// abstract methods;
+}
+
+inteface OnlineShop{
+		public void selectGoods();	
+		public void payment();
+		public void shipment();
+}
+
+class MyShop1 implements OnlineShop{
+
+	public void selectGoods(){
+		System.out.println("Goods have to be selected manually");
+	}
+	public void payment(){
+		System.out.println("Cash transaction only");
+	}
+	public void shipment(){
+		System.out.println("Goods need to carry by customer only");
+	}
+}
+
+class MyShop2 implements OnlineShop{
+
+	public void selectGoods(){
+		System.out.println("Goods can selected from www.onlineshop.com");
+	}
+	public void payment(){
+		System.out.println("credit/debit card transaction only");
+	}
+	public void shipment(){
+		System.out.println("Items will be shipped through blue dart");
+	}
+}
+
+1. We cannot create objects for interfaces
+2. We cannot provide the constructors in interface.
+3. All the methods in the interface are public and abstract only
+   even though we dont mention the access specifier
+   it is public not default.
+
+final
+------
+which can be applied at 
+1. variable level : Variable becomes constant ie., its value
+cannot be changed.
+
+2. method level: method cannot be overriden
+3. class level : class cannot be inherited
+
+final int x=10;
+
+x=20;  // error
+
+final public void sample(){
+
+
+}
+
+
+
+
+
+class extends class ---> valid
+class extends class1,class2 --->invalid
+class implements interface-->valid
+class implements interface1,interface2 -->valid
+interface extends interface ---> valid
+interface extends interface1, interface2---> valid
+interface implements interface ---> invalid
+class extends class implements interface ---> valid
+class extends class implements interface1, interface2 --->valid
+class implements interface extends class--> invalid
+
+lambda Expressions
+------------------
+Annoymous methods without having return type, access spcififer
+and name
+
+public void sample(){
+	System.out.println("Hello World");
+}
+
+  () -> {
+			System.out.println("Hello World");
+		}
+
+if there is only one statement then braces can be removed
+
+ ()->System.out.println("Hello World");
+
+1. public void sample(int a, int b)
+	{
+		System.out.println("The sum is : "+(a+b));
+	}
+
+	(int a, int b) -> System.out.println("The sum is : "+(a+b));
+
+No need to write the datatypes in the parameter list
+ 
+   (a,b)-> System.out.println("The sum is : "+(a+b));
+
+3. public int sum(int a, int b){
+		return a+b;
+   }
+
+   (a,b)->return a+b;
+  if we have only one return statement , then return keyword
+   is also not required.
+
+   (a,b)->a+b;
+
+4. public boolean biggest(int a, int b){
+		  if(a<b)
+				return true;
+		  else
+				return false;
+	}
+  
+  (a,b)-> a<b;
+
+5. public int findArea(int length, int breadth){
+		sysout("finding the area");
+     return length*breadth;
+   }
+  
+	(length,breadth) -> {
+		sysout("finding the area");
+     return length*breadth;
+   }
+
+Lambda expressions are used to implement the functional interfaces
+A functional interfaces are ones which have only one abstract
+method.
+
+@FunctionalInterface
+interface Maths{
+		public int add(int a, int b);
+	
+}
+
+class MathsImpl implements Maths{
+		public int add(int a, int b){
+			return a+b;
+		}
+}
+
+MathsImpl m = new MathsImpl();
+System.out.println(m.add(10,30));
+
+Predefined functional interfaces for utility:
+
+class Even{
+		public boolean isEven(int n){
+			if(n%2==0)
+				return true;
+			else
+				return false;
+		}
+}
+
+Even e = new Even();
+e.isEven(10);
+
+1. Predicate
+2. Function
+3. Consumer
+4. Supplier
+
+Predicate is a functional interface with only one method
+call test(), it will take any datatype as argument and
+returns only boolean
+
+interface Predicate<T>{
+		public Boolean test(T t);
+}
+
+java.util.function.*
+
+
+interface Function<T,R> {
+		public R apply(T t);
+}
+
+create a class called Employee with 
+name, desg, sal
+
+Employee(name,desg,sal)
+
+Increment the sal by 1000 -- Manager
+sal by 500 -- Clerk
+and return the updated emp object.
+
+Create a function to read Student object and return the class
+of the student.
+
+Student(name,marks)
+
+80> ==Distinction
+60 and 80 --> First class
+50 and 60 --> Second class
+<50 ---> fail
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
