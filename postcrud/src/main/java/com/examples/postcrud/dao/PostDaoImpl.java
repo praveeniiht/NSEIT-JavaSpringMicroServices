@@ -2,6 +2,7 @@ package com.examples.postcrud.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,6 +16,7 @@ public class PostDaoImpl implements PostDao {
 	String username = "root";
 	String password = "root";
 	static Connection con;
+	static PreparedStatement pst;
 	
 	static {
 		try {
@@ -44,6 +46,18 @@ public class PostDaoImpl implements PostDao {
 		}
 
 		return posts;
+	}
+
+	public String inserPost(Posts posts) throws SQLException {
+		// TODO Auto-generated method stub
+		String sql = "insert into posts values(?,?,?,?)";
+		pst = con.prepareStatement(sql);
+		pst.setInt(1, posts.getPid());
+		pst.setString(2, posts.getAuthor());
+		pst.setString(3, posts.getTitle());
+		pst.setString(4, posts.getDescription());
+		pst.executeUpdate();
+		return "Record Inserted...";
 	}
 
 }

@@ -20,4 +20,9 @@ public class PostServiceImpl implements PostService{
 		return dao.getAllPosts();
 	}
 
+	public String inserPost(Posts posts) throws SQLException {
+		// TODO Auto-generated method stub
+		return dao.inserPost(posts);
+	}
+
 }

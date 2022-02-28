@@ -8,5 +8,6 @@ import com.examples.postcrud.model.Posts;
 public interface PostService {
 	
 	public List<Posts> getAllPosts() throws SQLException;
+	public String inserPost(Posts posts) throws SQLException;
 
 }
