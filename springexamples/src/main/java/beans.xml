@@ -6,12 +6,23 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    
+  
     <bean id="addr" class="springexamples.Address">
     	<property name="dno" value="102" />
     	<property name="street" value="MG Road" />
     	<property name="city" value="Bangalore" />
     </bean>
+    
+    <!-- 
+ 
+    
+    <bean id="addr" class="springexamples.Address">
+    	<constructor-arg value="203" />
+    	<constructor-arg value="SD Road" />
+    	<constructor-arg value="Hyderabad" />
+    </bean>
+    
+    -->
     
     <bean id="stu" class="springexamples.Student">
     	<property name="htno" value="5067" />
