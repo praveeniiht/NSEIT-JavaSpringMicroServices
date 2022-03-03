@@ -19,6 +19,11 @@ public class PostServiceImpl implements PostService{
 	
 	@Autowired
 	RestTemplate template;
+	
+	@Autowired
+	PostFeignProxy proxy;
+	
+	
 
 	@Override
 	public String insertPost(Posts post) {
@@ -56,7 +61,8 @@ public class PostServiceImpl implements PostService{
 	@Override
 	public List<CommentsDto> searchCommentsByPid(int pid) {
 		// TODO Auto-generated method stub
-		List<CommentsDto> comments = template.getForObject("http://localhost:8082/comments/pid/"+pid,List.class);
+		List<CommentsDto> comments = template.getForObject("http://COMMENT-SERVICE/comments/pid/"+pid,List.class);
+		//List<CommentsDto> comments = proxy.findCommentsByPid(pid);
 		return comments;
 	}
 
